@@ -14,38 +14,46 @@ public class Tugas1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int[] numerators = new int[3];
-        int[] denominators = new int[3];
-        for (int i = 0; i < 3; i++) {
-            numerators[i] = input.nextInt();
-            denominators[i] = input.nextInt();
-        }
-        char operation = input.next().charAt(0);
-        double result = calculate(numerators, denominators, operation);
-        System.out.println("Hasil operasi: " + result);
-        input.close();
+        // TODO code application logic here
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Masukkan pecahan pertama (format: pembilang penyebut): ");
+        int pembilang1 = scanner.nextInt();
+        int penyebut1 = scanner.nextInt();
+
+        System.out.print("Masukkan pecahan kedua (format: pembilang penyebut): ");
+        int pembilang2 = scanner.nextInt();
+        int penyebut2 = scanner.nextInt();
+        
+        System.out.print("Masukkan pecahan ketiga (format: pembilang penyebut): ");
+        int pembilang3 = scanner.nextInt();
+        int penyebut3 = scanner.nextInt();
+        
+        // Penjumlahan pecahan
+        int hasilPembilangTambah = (pembilang1 * penyebut2 * penyebut3) +
+                (pembilang2 * penyebut1 * penyebut3) +
+                (pembilang3 * penyebut1 * penyebut2);
+        int hasilPenyebutTambah = penyebut1 * penyebut2 * penyebut3;
+
+        // Pengurangan pecahan
+        int hasilPembilangKurang = (pembilang1 * penyebut2 * penyebut3) -
+                (pembilang2 * penyebut1 * penyebut3) -
+                (pembilang3 * penyebut1 * penyebut2);
+        int hasilPenyebutKurang = penyebut1 * penyebut2 * penyebut3;
+
+        // Perkalian pecahan
+        int hasilPembilangKali = pembilang1 * pembilang2 * pembilang3;
+        int hasilPenyebutKali = penyebut1 * penyebut2 * penyebut3;
+
+        // Pembagian pecahan
+        int hasilPembilangBagi = pembilang1 * penyebut2 * penyebut3;
+        int hasilPenyebutBagi = penyebut1 * pembilang2 * penyebut3;
+
+        // Menampilkan hasil operasi
+        System.out.println("Hasil Penjumlahan: " + hasilPembilangTambah + "/" + hasilPenyebutTambah);
+        System.out.println("Hasil Pengurangan: " + hasilPembilangKurang + "/" + hasilPenyebutKurang);
+        System.out.println("Hasil Perkalian: " + hasilPembilangKali + "/" + hasilPenyebutKali);
+        System.out.println("Hasil Pembagian: " + hasilPembilangBagi + "/" + hasilPenyebutBagi);
     }
     
-    public static double calculate(int[] numerators, int[] denominators, char operation) {
-        double result = 0;
-        switch (operation) {
-            case '+':
-                result = ((double) numerators[0] / denominators[0]) + ((double) numerators[1] / denominators[1]) + ((double) numerators[2] / denominators[2]);
-                break;
-            case '-':
-                result = ((double) numerators[0] / denominators[0]) - ((double) numerators[1] / denominators[1]) - ((double) numerators[2] / denominators[2]);
-                break;
-            case '*':
-                result = ((double) numerators[0] / denominators[0]) * ((double) numerators[1] / denominators[1]) * ((double) numerators[2] / denominators[2]);
-                break;
-            case '/':
-                result = ((double) numerators[0] / denominators[0]) / ((double) numerators[1] / denominators[1]) / ((double) numerators[2] / denominators[2]);
-                break;
-            default:
-                System.out.println("Operasi tidak valid.");
-                System.exit(1);
-        }
-        return result;
-    }
 }
