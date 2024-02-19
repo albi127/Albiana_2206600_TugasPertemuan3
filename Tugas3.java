@@ -14,15 +14,20 @@ public class Tugas3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          char charA = 'A';
-        char charB = 'B';
-
-        int asciiA = (int) charA;
-        int asciiB = (int) charB;
-
-        int totalAscii = asciiA + asciiB;
-
-        System.out.println("Total kode ASCII adalah: " + totalAscii);
+        // TODO code application logic here
+        
+        
+        // Mendapatkan kode ASCII untuk karakter 'A' dan 'B'
+        int kodeAsciiA = (int) 'A';
+        int kodeAsciiB = (int) 'B';
+        
+        // Menjumlahkan kode ASCII dari 'A' dan 'B'
+        int hasilJumlah = kodeAsciiA + kodeAsciiB;
+        
+        // Menampilkan hasil penjumlahan
+        System.out.println("nilai character 'A' :" + kodeAsciiA);
+        System.out.println("nilai character 'B' :" + kodeAsciiB);
+        System.out.println("Hasil penjumlahan kode ASCII dari 'A' dan 'B' adalah: " + hasilJumlah);
     }
+    
 }
-   
